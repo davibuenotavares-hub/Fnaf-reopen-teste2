@@ -1,0 +1,33 @@
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; user-select: none; }
+body { margin: 0; background: #000; color: white; font-family: 'Courier New', monospace; overflow: hidden; }
+
+#game-screen { width: 100vw; height: 100vh; position: relative; display: flex; flex-direction: column; }
+
+#ui-top { 
+    display: flex; justify-content: space-between; padding: 15px; 
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent); z-index: 100;
+}
+
+#office { flex: 1; position: relative; background: #111; display: flex; justify-content: space-around; align-items: center; }
+.aperture { 
+    width: 35%; height: 50%; border: 5px solid #333; display: flex; 
+    align-items: center; justify-content: center; font-size: 0.8rem; text-align: center;
+}
+.closed { background: #400; border-color: #f00; box-shadow: inset 0 0 20px #000; }
+
+#visual-feedback { 
+    position: absolute; inset: 0; pointer-events: none; z-index: 5; transition: 0.3s; 
+}
+.danger-flash { background: rgba(255, 0, 0, 0.2); animation: pulse 1s infinite; }
+@keyframes pulse { 0% { opacity: 0.2; } 50% { opacity: 0.5; } 100% { opacity: 0.2; } }
+
+#camera-monitor { position: absolute; inset: 0; background: #000; display: none; flex-direction: column; z-index: 150; }
+#cam-view { flex: 1; border: 10px solid #222; position: relative; overflow: hidden; }
+#cam-controls { padding: 10px; background: #0a0a0a; }
+#cam-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 10px; }
+.cam-btn { padding: 15px; background: #222; color: #0f0; border: 1px solid #0f0; }
+#cam-actions { display: flex; gap: 5px; }
+#cam-actions button { flex: 1; padding: 15px; background: #111; color: white; border: 1px solid #444; }
+
+#office-controls { display: flex; height: 90px; }
+#office-controls button { flex: 1; background: #1a1a1a; color: white; border: 1px solid #333; font-weight: bold; }
